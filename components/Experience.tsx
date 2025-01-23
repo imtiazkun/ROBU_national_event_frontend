@@ -1,0 +1,80 @@
+"use client";
+
+import { Canvas } from "@react-three/fiber";
+import { Robot } from "./Robot";
+import {
+  Float,
+  OrbitControls,
+  Sky,
+  Stage,
+  Stars,
+  TransformControls,
+} from "@react-three/drei";
+import { Suspense } from "react";
+import Loader from "./Loader";
+import * as THREE from "three";
+import { Planet } from "./Planet";
+import Flag from "./Flag";
+
+export default function Experience() {
+  return (
+    <Canvas fallback={<Loader />} shadows dpr={[1, 2]} camera={{ position: [-25, -10, 35], fov: 50 }}>
+      <Sky
+        distance={450000}
+        sunPosition={[0, 0, 0]}
+        inclination={0}
+        azimuth={0.25}
+      />
+      <Stars
+        radius={100}
+        depth={50}
+        count={5000}
+        factor={4}
+        saturation={0}
+        fade
+        speed={1}
+      />
+
+      <Suspense>
+        <Stage
+          preset="rembrandt"
+          intensity={5}
+          environment="city"
+          shadows={{
+            type: "accumulative",
+            color: "white",
+            opacity: 0,
+          }}
+        >
+          <Float floatingRange={[1, 10]} speed={2} rotationIntensity={0.1}>
+            <group
+              rotation={[
+                THREE.MathUtils.degToRad(-5),
+                THREE.MathUtils.degToRad(7),
+                THREE.MathUtils.degToRad(-4),
+              ]}
+              position={[0, -35.9, -50]}
+            >
+              <Robot />
+              <Flag
+                position={[0, -35.9, 14]}
+                scale={[20, 20, 0.01]}
+                rotation={[
+                  THREE.MathUtils.degToRad(0),
+                  THREE.MathUtils.degToRad(0),
+                  THREE.MathUtils.degToRad(90),
+                ]}
+              />
+            </group>
+          </Float>
+        </Stage>
+      </Suspense>
+
+      <Suspense fallback={null}>
+        <Planet scale={[400, 400, 400]} position={[200, -150, -500]} />
+      </Suspense>
+
+      <OrbitControls />
+    </Canvas>
+  );
+}
