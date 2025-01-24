@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ApiResponse {
   data: Array<{
@@ -68,7 +69,7 @@ export default async function Home() {
               platform for you to channel the revolutionary in you.
             </p>
             <div>
-              <a className="bg-white w-full font-black text-black mt-2 py-4 rounded-lg flex items-center justify-center text-xl gap-2 tracking-widest hover:bg-black transition-colors cursor-pointer hover:text-white">
+              <Link href="/register" className="bg-white w-full font-black text-black mt-2 py-4 rounded-lg flex items-center justify-center text-xl gap-2 tracking-widest hover:bg-black transition-colors cursor-pointer hover:text-white">
                 Register{" "}
                 <Image
                   width={50}
@@ -77,7 +78,7 @@ export default async function Home() {
                   className="w-7"
                   alt=""
                 />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
