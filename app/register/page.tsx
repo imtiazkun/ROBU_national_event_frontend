@@ -35,6 +35,7 @@ import {
 import { toast } from "sonner";
 import Image from "next/image";
 import Clock from "@/components/Clock";
+import Link from "next/link";
 
 const formSchema = z.object({
   segment: z.string(),
@@ -258,7 +259,9 @@ const TeamForm = () => {
               {/* <p >00: 23 : 51</p> */}
               <Clock />
               <p className="text-right text-2xl mb-5">
-                <small className="font-bold code">Remaining for Registration</small>
+                <small className="font-bold code">
+                  Remaining for Registration
+                </small>
               </p>
               <p className="text-justify text-xl">
                 Rose from the pits of hell, rise shall we again. With the
@@ -266,6 +269,21 @@ const TeamForm = () => {
                 of BRAC University, celebrate the revolution with yet another
                 platform for you to channel the revolutionary in you.
               </p>
+              <div className="mt-5">
+                <Link
+                  href={"#form"}
+                  className="bg-white w-full font-black text-black mt-2 py-4 rounded-lg flex items-center justify-center text-xl gap-2 tracking-widest hover:bg-black transition-colors cursor-pointer hover:text-white"
+                >
+                  Register{" "}
+                  <Image
+                    width={50}
+                    height={50}
+                    src="redirect.svg"
+                    className="w-7"
+                    alt=""
+                  />
+                </Link>
+              </div>
             </div>
           </div>
           <div className="flex-1 hidden lg:flex items-center justify-center relative select-none">
@@ -274,7 +292,7 @@ const TeamForm = () => {
               height={832}
               src="/astronaut.png"
               alt=""
-              className="object-contain absolute -top-14 up levitate"
+              className="object-contain absolute -top-14 up levitate select-none -z-10"
             />
           </div>
 
@@ -283,7 +301,7 @@ const TeamForm = () => {
               background:
                 "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(69,22,189,1) 36%, rgba(211,117,255,1) 100%)",
             }}
-            className="absolute top-0 left-0 w-full h-full p-5 -z-10"
+            className="absolute top-0 left-0 w-full h-full p-5 -z-20"
           >
             <Image
               width={1600}
@@ -299,6 +317,7 @@ const TeamForm = () => {
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="container mx-auto px-5 lg:px-20 min-h-screen p-5"
+          id="form"
         >
           <div>
             <h1 className="text-3xl font-bold mt-20 mb-8">Register</h1>
