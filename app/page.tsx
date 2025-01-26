@@ -36,7 +36,6 @@ export default async function Home() {
     <div className="h-auto min-h-screen w-full overflow-hidden">
       <div className="w-full min-h-screen relative bg-bottom">
         <div
-          style={{}}
           className="flex items-center flex-col lg:flex-row justify-center gap-10 container mx-auto px-5 lg:px-20 "
         >
           <div className="flex-1 md:py-10">
