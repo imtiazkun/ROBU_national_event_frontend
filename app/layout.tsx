@@ -19,6 +19,7 @@ const inter = Inter({ subsets: ["latin"] });
 // }
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 interface RootLayoutProps {
   children: React.ReactNode;
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>
