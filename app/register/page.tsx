@@ -1501,7 +1501,11 @@ const TeamForm = () => {
                   </p>
                 </CardContent>
                 <CardFooter>
-                  <p>Use Reference: Segment name_Team name</p>
+                  {form.watch("segment") == "Prompt-Engineering" ? (
+                    <p>Use Reference: Segment name_Participant name</p>
+                  ) : (
+                    <p>Use Reference: Segment name_Team name</p>
+                  )}
                 </CardFooter>
               </Card>
 
@@ -1559,14 +1563,11 @@ const TeamForm = () => {
                   render={({ field }) => (
                     <FormItem className="w-full lg:w-1/2">
                       <FormLabel>Transaction Id</FormLabel>
-                      <Input
-                        type="text"
-                        {...field}
-                      />
+                      <Input type="text" {...field} />
                       <FormDescription>
                         {form.formState.errors.applicant_session?.message}
                       </FormDescription>
-                     
+
                       <FormMessage />
                     </FormItem>
                   )}
