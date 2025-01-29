@@ -1513,7 +1513,7 @@ const TeamForm = () => {
                             {[
                               {
                                 id: 1,
-                                name: "bKash",
+                                name: "bKash (Send Money)",
                                 icon: "/bkash-logo.svg",
                               },
                             ].map((segment) => (
