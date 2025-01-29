@@ -1560,16 +1560,13 @@ const TeamForm = () => {
                     <FormItem className="w-full lg:w-1/2">
                       <FormLabel>Transaction Id</FormLabel>
                       <Input
-                        placeholder="Reference: Segment name_Team name"
                         type="text"
                         {...field}
                       />
                       <FormDescription>
                         {form.formState.errors.applicant_session?.message}
                       </FormDescription>
-                      <FormDescription>
-                        Use Reference: Segment name_Team name
-                      </FormDescription>
+                     
                       <FormMessage />
                     </FormItem>
                   )}
