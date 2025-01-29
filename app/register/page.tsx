@@ -195,7 +195,7 @@ const TeamForm = () => {
       applicant_session: "",
       applicant_tshirt: "",
       team_name: "",
-      payment_method: "",
+      payment_method: "bkash",
       transaction_id: "",
 
       team_member_1_name: "",
@@ -356,9 +356,10 @@ const TeamForm = () => {
               </p>
               <p className="text-justify text-xl">
                 Rose from the pits of hell, rise shall we again. With the
-                forthcoming advent of OPPO Reno13 Series presents Traction অভ্যুদয়, we, the Robotics Club
-                of BRAC University, celebrate the revolution with yet another
-                platform for you to channel the revolutionary in you.
+                forthcoming advent of OPPO Reno13 Series presents Traction
+                অভ্যুদয়, we, the Robotics Club of BRAC University, celebrate
+                the revolution with yet another platform for you to channel the
+                revolutionary in you.
               </p>
               <div className="mt-5">
                 <Link
@@ -1453,7 +1454,7 @@ const TeamForm = () => {
 
               <Card className="mt-5">
                 <CardHeader>
-                  <CardTitle>Payment</CardTitle>
+                  <CardTitle>Payment (Send Money)</CardTitle>
                   <CardDescription>
                     {
                       segments.filter(
@@ -1480,20 +1481,28 @@ const TeamForm = () => {
                     }
                   </Link>
 
-                  <p className="mt-2">
-                    <code className="px-2 py-1 mt-2 bg-gray-800 text-2xl rounded-sm">
+                  <p className="mt-2 flex items-center gap-2">
+                    <div>
+                      <Image
+                        width={60}
+                        height={40}
+                        alt="Bkash"
+                        src={"/bkash-logo.svg"}
+                      />
+                    </div>
+                    <p className="px-2 py-1 bg-gray-800 text-2xl rounded-sm">
                       {
                         segments.filter(
                           (item) => item.name == form.watch("segment")
                         )[0].payment?.bKash
                       }
-                    </code>
+                    </p>
                   </p>
                 </CardContent>
               </Card>
 
               <div className="flex w-full gap-5 items-start mt-5 flex-col lg:flex-row">
-                <FormField
+                {/* <FormField
                   control={form.control}
                   name="payment_method"
                   render={({ field }) => (
@@ -1538,14 +1547,14 @@ const TeamForm = () => {
                       <FormMessage />
                     </FormItem>
                   )}
-                />
+                /> */}
 
                 <FormField
                   control={form.control}
                   name="transaction_id"
                   render={({ field }) => (
                     <FormItem className="w-full lg:w-1/2">
-                      <FormLabel>Transaction Id or Phone Number</FormLabel>
+                      <FormLabel>Transaction Id</FormLabel>
                       <Input type="text" {...field} />
                       <FormDescription>
                         {form.formState.errors.applicant_session?.message}
