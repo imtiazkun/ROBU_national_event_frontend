@@ -92,7 +92,7 @@ const segments = [
     participation_type: "team",
     summary:
       "Think of FIFA WORLD CUP, but more futuristic! Robots on the field with strategies sharper than Messi's free kick. The flawless blend of engineering and competitive minds. Two Bots, one ball, unlimited action, powered by the skilled remote handlers or maybe even autonomously. This segment will bring robotic godzillas that will clash on the field fighting to score the perfect goal and bring the trophy with honor. Will your Bot be the next 'Messi'? Join this tournament to find the potential of you and your Bot-footballer.",
-    fee: "1200 BDT for 3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
+    fee: "1200 BDT for 1-3 Members, 400 BDT for additional member (Max 5 Members)",
     rulebook_link: "https://tinyurl.com/muetffnj",
   },
   {
@@ -101,7 +101,7 @@ const segments = [
     participation_type: "team",
     summary:
       "Ever dreamed of being an F1 driver, as well as own a car like one? Buckle up racers, it's time to put your mind on building up the engines and wheels for your Bot, which can accelerate faster on tracks. The path for achieving the award is set and the time is running out. All you have to do is to create a bot which can follow the line, navigating the turns with sharp precision with furious speed. Is your Bot going to be the next F1 driver's car?",
-    fee: "1200 BDT for 3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
+    fee: "1200 BDT for 1-3 Members, 400 BDT for additional member (Max 5 Members)",
     rulebook_link: "https://tinyurl.com/mrnppcm4",
   },
   {
@@ -110,7 +110,7 @@ const segments = [
     participation_type: "team",
     summary:
       "This isn't just a competition about following a path, here a bot has to precisely navigate a complex line-marked path while proving its algorithms can be the boss in motion. This segment is the prime example where programming meets precision parking. In a country where taking the right path isn’t just a robotics challenge but a life lesson, Pathfinder is the perfect segment of the event to challenge your bots problem solving skills of precision on which path to take and ultimately finishing the quest. Will your LFR hold the title of master of the course, or will it get stuck in a never ending loop?",
-    fee: "1200 BDT for 3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
+    fee: "1200 BDT for 1-3 Members, 400 BDT for additional member (Max 5 Members)",
     rulebook_link: "https://tinyurl.com/24y2tata",
   },
   {
@@ -119,7 +119,7 @@ const segments = [
     participation_type: "team",
     summary:
       "Dive into the ultimate aquatic showdown! Picture your bot cutting through waves like a rogue aquatic machine outmaneuvering every challenge. Aqua Wars is where the challenges of robotics and maneuvering water bodies join together. This segment challenges your engineering capacity to design a bot that can not only race but also navigate unpredictable aquatic terrains. Competitors will design water surface robots that has good speed, maneuvering capacity and stability to stand against high velocity and turbulence of water. Will your robot dominate the waves and claim the Aqua Wars championship? Get ready to ride the tides!",
-    fee: "1200 BDT for 3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
+    fee: "1200 BDT for 1-3 Members, 400 BDT for additional member (Max 5 Members)",
     rulebook_link: "https://tinyurl.com/2sy9dhcr",
   },
   {
@@ -137,7 +137,7 @@ const segments = [
     participation_type: "team",
     summary:
       "Bring your vision to life and share it with the world. The Innovators Exhibit aims to give you the stage to show your projects that redefine technology. Whether it’s a game-changing prototype, solution to a real-world problem, or a glimpse into the future - this is your moment. Let your ideas take the spotlight and show the world what you envisioned, designed and built. This is your chance to lead the charge into a new era of technology. Could your idea become the next big thing? Join us to discover your full potential!",
-    fee: "1200 BDT for 3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
+    fee: "1200 BDT for 1-3 Members, 400 BDT for 2 additional member each (Max 5 Members)",
     rulebook_link: "https://tinyurl.com/3t7cy2k2",
   },
 ];
@@ -451,7 +451,7 @@ const TeamForm = () => {
                 <Separator className="my-5" />
 
                 <p>
-                  <Button>
+                  <Button type="button" variant={"link"}>
                     <a
                       href={
                         segments.filter(
@@ -1428,7 +1428,7 @@ const TeamForm = () => {
                             {[
                               {
                                 id: 1,
-                                name: "Bkash",
+                                name: "bKash",
                               },
                             ].map((segment) => (
                               <SelectItem key={segment.id} value={segment.name}>
@@ -1456,7 +1456,7 @@ const TeamForm = () => {
                       <FormDescription>
                         {form.formState.errors.applicant_session?.message}
                       </FormDescription>
-                      <FormDescription>Semester, class</FormDescription>
+                      {/* <FormDescription>Semester, class</FormDescription> */}
                       <FormMessage />
                     </FormItem>
                   )}
