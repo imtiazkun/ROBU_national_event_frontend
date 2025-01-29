@@ -3,7 +3,6 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -315,7 +314,7 @@ const TeamForm = () => {
       })
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .then((data) => {
-        toast.success("Registration successful");
+        window.location.href = "/register/done";
       });
   }
 
@@ -1510,15 +1509,24 @@ const TeamForm = () => {
                         </SelectTrigger>
                         <SelectContent>
                           <SelectGroup>
-                            <SelectLabel>Segments</SelectLabel>
+                            <SelectLabel>Methods</SelectLabel>
                             {[
                               {
                                 id: 1,
                                 name: "bKash",
+                                icon: "/bkash-logo.svg",
                               },
                             ].map((segment) => (
                               <SelectItem key={segment.id} value={segment.name}>
-                                {segment.name}
+                                <div className="flex items-center">
+                                  <Image
+                                    width={60}
+                                    height={40}
+                                    alt="Bkash"
+                                    src={segment.icon}
+                                  />
+                                  <span>{segment.name}</span>
+                                </div>
                               </SelectItem>
                             ))}
                           </SelectGroup>
@@ -1559,7 +1567,7 @@ const TeamForm = () => {
 
       <div className="my-10 container mx-auto px-5 lg:px-20 text-gray-600">
         <Separator className="mb-10" />
-        <p>Developed by IT Department, Robotics Club of BRAC University</p>
+        <p>Developed by ROBU Web Dev Team, BRAC University</p>
       </div>
     </Form>
   );
