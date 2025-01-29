@@ -214,7 +214,7 @@ const TeamForm = () => {
       return;
     }
 
-    fetch("http://bracurobu.com:6969/registrations", {
+    fetch("https://api.traction.bracurobu.com/registrations", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -301,6 +301,18 @@ const TeamForm = () => {
                 src="/banner.png"
                 alt=""
                 className="w-full"
+              />
+              <Image
+                width={370}
+                height={104}
+                src="/sponsor.png"
+                alt=""
+                style={{
+                  borderRadius: "2.8125rem",
+                  background: "rgba(255, 255, 255, 0.20)",
+                  backdropFilter: "blur(7.349999904632568px)",
+                }}
+                className="levitate select-none -z-10 bg-white"
               />
             </div>
             <div className="flex-1 text-white">

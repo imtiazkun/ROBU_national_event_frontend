@@ -1,6 +1,14 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Traction অভ্যুদয় powered by 𝐎𝐩𝐩𝐨 𝐑𝐞𝐧𝐨𝟏𝟑 𝐒𝐞𝐫𝐢𝐞𝐬 | Robotics Club of BRAC University",
+  description: "...",
+};
+
 const inter = Inter({ subsets: ["latin"] });
 // export default function RootLayout({
 //   children,
