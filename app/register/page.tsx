@@ -325,8 +325,8 @@ const TeamForm = () => {
     <Form {...form}>
       <div className="h-auto min-h-screen w-full overflow-hidden">
         <div className="w-full min-h-screen relative bg-bottom">
-          <div className="flex items-center flex-col lg:flex-row justify-center gap-10 container mx-auto px-5 lg:px-20 ">
-            <div className="flex-1 md:py-10">
+          <div className="flex pt-10 flex-col lg:flex-row justify-center gap-10 container mx-auto px-5 lg:px-20 ">
+            <div className="flex-1 py-10 md:py-0">
               <Image
                 width={370}
                 height={104}
@@ -337,7 +337,7 @@ const TeamForm = () => {
                   background: "rgba(255, 255, 255, 0.20)",
                   backdropFilter: "blur(7.349999904632568px)",
                 }}
-                className="select-none -z-10 bg-white"
+                className="select-none -z-10 bg-white my-4"
               />
               <Image
                 width={800}
