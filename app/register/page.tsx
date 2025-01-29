@@ -356,7 +356,7 @@ const TeamForm = () => {
               </p>
               <p className="text-justify text-xl">
                 Rose from the pits of hell, rise shall we again. With the
-                forthcoming advent of Traction অভ্যুদয়, we, the Robotics Club
+                forthcoming advent of OPPO Reno13 Series presents Traction অভ্যুদয়, we, the Robotics Club
                 of BRAC University, celebrate the revolution with yet another
                 platform for you to channel the revolutionary in you.
               </p>
