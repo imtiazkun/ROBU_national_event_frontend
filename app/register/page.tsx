@@ -101,7 +101,7 @@ const segments = [
   },
   {
     id: 2,
-    name: "Mechna-Sprint",
+    name: "Mecha-Sprint",
     participation_type: "team",
     summary:
       "Ever dreamed of being an F1 driver, as well as own a car like one? Buckle up racers, it's time to put your mind on building up the engines and wheels for your Bot, which can accelerate faster on tracks. The path for achieving the award is set and the time is running out. All you have to do is to create a bot which can follow the line, navigating the turns with sharp precision with furious speed. Is your Bot going to be the next F1 driver's car?",
