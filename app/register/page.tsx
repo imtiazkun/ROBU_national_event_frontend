@@ -27,6 +27,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -1499,6 +1500,9 @@ const TeamForm = () => {
                     </p>
                   </p>
                 </CardContent>
+                <CardFooter>
+                  <p>Use Reference: Segment name_Team name</p>
+                </CardFooter>
               </Card>
 
               <div className="flex w-full gap-5 items-start mt-5 flex-col lg:flex-row">
@@ -1555,11 +1559,17 @@ const TeamForm = () => {
                   render={({ field }) => (
                     <FormItem className="w-full lg:w-1/2">
                       <FormLabel>Transaction Id</FormLabel>
-                      <Input type="text" {...field} />
+                      <Input
+                        placeholder="Reference: Segment name_Team name"
+                        type="text"
+                        {...field}
+                      />
                       <FormDescription>
                         {form.formState.errors.applicant_session?.message}
                       </FormDescription>
-                      {/* <FormDescription>Semester, class</FormDescription> */}
+                      <FormDescription>
+                        Use Reference: Segment name_Team name
+                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
