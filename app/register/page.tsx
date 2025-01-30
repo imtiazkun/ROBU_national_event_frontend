@@ -726,9 +726,6 @@ const TeamForm = () => {
                                 "team_member_1_name"
                               )}`}
                         </CardTitle>
-                        <CardDescription>
-                          Deploy your new project in one-click.
-                        </CardDescription>
                       </CardHeader>
 
                       <CardContent>
@@ -738,7 +735,7 @@ const TeamForm = () => {
                             name="team_member_1_name"
                             render={({ field }) => (
                               <FormItem className="flex-1">
-                                <FormLabel>Applicant Name</FormLabel>
+                                <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -783,7 +780,7 @@ const TeamForm = () => {
                                 </Select>
                                 <FormDescription>
                                   {
-                                    form.formState.errors.applicant_name
+                                    form.formState.errors.team_member_1_tshirt
                                       ?.message
                                   }
                                 </FormDescription>
@@ -799,7 +796,7 @@ const TeamForm = () => {
                             name="team_member_1_email"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Email</FormLabel>
+                                <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -819,7 +816,7 @@ const TeamForm = () => {
                             name="team_member_1_phone"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Phone</FormLabel>
+                                <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -908,9 +905,6 @@ const TeamForm = () => {
                                 "team_member_2_name"
                               )}`}
                         </CardTitle>
-                        <CardDescription>
-                          Deploy your new project in one-click.
-                        </CardDescription>
                       </CardHeader>
 
                       <CardContent>
@@ -920,7 +914,7 @@ const TeamForm = () => {
                             name="team_member_2_name"
                             render={({ field }) => (
                               <FormItem className="flex-1">
-                                <FormLabel>Applicant Name</FormLabel>
+                                <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -981,7 +975,7 @@ const TeamForm = () => {
                             name="team_member_2_email"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Email</FormLabel>
+                                <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1001,7 +995,7 @@ const TeamForm = () => {
                             name="team_member_2_phone"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Phone</FormLabel>
+                                <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1090,9 +1084,6 @@ const TeamForm = () => {
                                 "team_member_3_name"
                               )}`}
                         </CardTitle>
-                        <CardDescription>
-                          Deploy your new project in one-click.
-                        </CardDescription>
                       </CardHeader>
 
                       <CardContent>
@@ -1102,7 +1093,7 @@ const TeamForm = () => {
                             name="team_member_3_name"
                             render={({ field }) => (
                               <FormItem className="flex-1">
-                                <FormLabel>Applicant Name</FormLabel>
+                                <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1163,7 +1154,7 @@ const TeamForm = () => {
                             name="team_member_3_email"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Email</FormLabel>
+                                <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1183,7 +1174,7 @@ const TeamForm = () => {
                             name="team_member_3_phone"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Phone</FormLabel>
+                                <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1272,9 +1263,6 @@ const TeamForm = () => {
                                 "team_member_4_name"
                               )}`}
                         </CardTitle>
-                        <CardDescription>
-                          Deploy your new project in one-click.
-                        </CardDescription>
                       </CardHeader>
 
                       <CardContent>
@@ -1284,7 +1272,7 @@ const TeamForm = () => {
                             name="team_member_4_name"
                             render={({ field }) => (
                               <FormItem className="flex-1">
-                                <FormLabel>Applicant Name</FormLabel>
+                                <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1345,7 +1333,7 @@ const TeamForm = () => {
                             name="team_member_4_email"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Email</FormLabel>
+                                <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1365,7 +1353,7 @@ const TeamForm = () => {
                             name="team_member_4_phone"
                             render={({ field }) => (
                               <FormItem className="flex-1 mt-5">
-                                <FormLabel>Applicant Phone</FormLabel>
+                                <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
                                 <FormDescription>
                                   <FormDescription>
@@ -1565,7 +1553,7 @@ const TeamForm = () => {
                       <FormLabel>Transaction Id</FormLabel>
                       <Input type="text" {...field} />
                       <FormDescription>
-                        {form.formState.errors.applicant_session?.message}
+                        {form.formState.errors.transaction_id?.message}
                       </FormDescription>
 
                       <FormMessage />
