@@ -261,7 +261,7 @@ const TeamForm = () => {
           {
             name: values.applicant_name,
             email: values.applicant_email,
-            phone: values.applicant_phone,
+            Phone: values.applicant_phone,
             institution: values.applicant_institution,
             student_id: values.applicant_student_id,
             session: values.applicant_session,
@@ -270,7 +270,7 @@ const TeamForm = () => {
           {
             name: values.team_member_1_name,
             email: values.team_member_1_email,
-            phone: values.team_member_1_phone,
+            Phone: values.team_member_1_phone,
             institution: values.team_member_1_institution,
             student_id: values.team_member_1_student_id,
             session: values.team_member_1_session,
@@ -279,7 +279,7 @@ const TeamForm = () => {
           {
             name: values.team_member_2_name,
             email: values.team_member_2_email,
-            phone: values.team_member_2_phone,
+            Phone: values.team_member_2_phone,
             institution: values.team_member_2_institution,
             student_id: values.team_member_2_student_id,
             session: values.team_member_2_session,
@@ -288,7 +288,7 @@ const TeamForm = () => {
           {
             name: values.team_member_3_name,
             email: values.team_member_3_email,
-            phone: values.team_member_3_phone,
+            Phone: values.team_member_3_phone,
             institution: values.team_member_3_institution,
             student_id: values.team_member_3_student_id,
             session: values.team_member_3_session,
@@ -297,7 +297,7 @@ const TeamForm = () => {
           {
             name: values.team_member_4_name,
             email: values.team_member_4_email,
-            phone: values.team_member_4_phone,
+            Phone: values.team_member_4_phone,
             institution: values.team_member_4_institution,
             student_id: values.team_member_4_student_id,
             session: values.team_member_4_session,
