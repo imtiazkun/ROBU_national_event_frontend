@@ -265,7 +265,7 @@ const TeamForm = () => {
             institution: values.applicant_institution,
             student_id: values.applicant_student_id,
             session: values.applicant_session,
-            tshirt: values.applicant_tshirt,
+            tsize: values.applicant_tshirt,
           },
           {
             name: values.team_member_1_name,
@@ -274,7 +274,7 @@ const TeamForm = () => {
             institution: values.team_member_1_institution,
             student_id: values.team_member_1_student_id,
             session: values.team_member_1_session,
-            tshirt: values.team_member_1_tshirt,
+            tsize: values.team_member_1_tshirt,
           },
           {
             name: values.team_member_2_name,
@@ -283,7 +283,7 @@ const TeamForm = () => {
             institution: values.team_member_2_institution,
             student_id: values.team_member_2_student_id,
             session: values.team_member_2_session,
-            tshirt: values.team_member_2_tshirt,
+            tsize: values.team_member_2_tshirt,
           },
           {
             name: values.team_member_3_name,
@@ -292,7 +292,7 @@ const TeamForm = () => {
             institution: values.team_member_3_institution,
             student_id: values.team_member_3_student_id,
             session: values.team_member_3_session,
-            tshirt: values.team_member_3_tshirt,
+            tsize: values.team_member_3_tshirt,
           },
           {
             name: values.team_member_4_name,
@@ -301,7 +301,7 @@ const TeamForm = () => {
             institution: values.team_member_4_institution,
             student_id: values.team_member_4_student_id,
             session: values.team_member_4_session,
-            tshirt: values.team_member_4_tshirt,
+            tsize: values.team_member_4_tshirt,
           },
         ],
       }),
