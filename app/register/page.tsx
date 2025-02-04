@@ -49,6 +49,7 @@ const formSchema = z.object({
   applicant_tshirt: z.string().nonempty(),
   payment_method: z.string().nonempty(),
   transaction_id: z.string().nonempty(),
+  referral_code: z.string().optional(),
   team_name: z.string(),
 
   team_member_1_name: z.string().optional(),
@@ -198,6 +199,7 @@ const TeamForm = () => {
       team_name: "",
       payment_method: "bkash",
       transaction_id: "",
+      referral_code: "",
 
       team_member_1_name: "",
       team_member_1_email: "someone@example.com",
@@ -257,6 +259,7 @@ const TeamForm = () => {
         isTeam: values.isTeam,
         method: values.payment_method,
         trx_id: values.transaction_id,
+        referral_code: values.referral_code,
         applicants: [
           {
             name: values.applicant_name,
@@ -307,7 +310,7 @@ const TeamForm = () => {
       }),
     })
       .then((res) => {
-        if (res.status != 200) {
+        if (res.status >= 400) {
           toast.error("Failed to register. Try again later.");
           return;
         }
@@ -533,11 +536,7 @@ const TeamForm = () => {
                     <FormItem className="flex-1">
                       <FormLabel>Applicant Name</FormLabel>
                       <Input {...field} />
-                      <FormDescription>
-                        <FormDescription>
-                          {form.formState.errors.applicant_name?.message}
-                        </FormDescription>{" "}
-                      </FormDescription>
+              
                       <FormMessage />
                     </FormItem>
                   )}
@@ -568,9 +567,6 @@ const TeamForm = () => {
                           </SelectGroup>
                         </SelectContent>
                       </Select>
-                      <FormDescription>
-                        {form.formState.errors.applicant_name?.message}
-                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -585,9 +581,6 @@ const TeamForm = () => {
                     <FormItem className="mt-5 flex-1">
                       <FormLabel>Email</FormLabel>
                       <Input type="email" {...field} />
-                      <FormDescription>
-                        {form.formState.errors.applicant_email?.message}
-                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -599,9 +592,6 @@ const TeamForm = () => {
                     <FormItem className="mt-5 flex-1">
                       <FormLabel>Phone</FormLabel>
                       <Input type="tel" {...field} />
-                      <FormDescription>
-                        {form.formState.errors.applicant_phone?.message}
-                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -615,11 +605,6 @@ const TeamForm = () => {
                   <FormItem className="mt-5">
                     <FormLabel>Institution</FormLabel>
                     <Input {...field} />
-                    <FormDescription>
-                      <FormDescription>
-                        {form.formState.errors.applicant_institution?.message}
-                      </FormDescription>{" "}
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -633,9 +618,6 @@ const TeamForm = () => {
                     <FormItem className="mt-5 flex-1">
                       <FormLabel>Student Id</FormLabel>
                       <Input type="text" {...field} />
-                      <FormDescription>
-                        {form.formState.errors.applicant_student_id?.message}
-                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -647,9 +629,6 @@ const TeamForm = () => {
                     <FormItem className="mt-5 flex-1">
                       <FormLabel>Session</FormLabel>
                       <Input type="tel" {...field} />
-                      <FormDescription>
-                        {form.formState.errors.applicant_session?.message}
-                      </FormDescription>
                       <FormDescription>Semester, class</FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -678,9 +657,6 @@ const TeamForm = () => {
                     <FormItem className="flex-1">
                       <FormLabel>Team Name</FormLabel>
                       <Input {...field} />
-                      <FormDescription>
-                        {form.formState.errors.team_name?.message}
-                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
@@ -737,14 +713,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1">
                                 <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_1_name
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -778,12 +746,6 @@ const TeamForm = () => {
                                     </SelectGroup>
                                   </SelectContent>
                                 </Select>
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_1_tshirt
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -798,14 +760,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_1_email
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -818,14 +772,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_1_phone
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -840,14 +786,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-full lg:w-1/3">
                                 <FormLabel>Institution</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors
-                                        .team_member_1_institution?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -860,12 +798,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-6/12 lg:w-1/3">
                                 <FormLabel>Student Id</FormLabel>
                                 <Input type="text" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors
-                                      .team_member_1_student_id?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -877,12 +809,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-5/12 lg:w-1/3">
                                 <FormLabel>Session</FormLabel>
                                 <Input type="text" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_1_session
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormDescription>
                                   Semester, class
                                 </FormDescription>
@@ -916,14 +842,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1">
                                 <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_2_name
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -957,12 +875,6 @@ const TeamForm = () => {
                                     </SelectGroup>
                                   </SelectContent>
                                 </Select>
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_2_tshirt
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -977,14 +889,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_2_email
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -997,14 +901,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_2_phone
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1019,14 +915,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-full lg:w-1/3">
                                 <FormLabel>Institution</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors
-                                        .team_member_2_institution?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1039,12 +927,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-6/12 lg:flex-1">
                                 <FormLabel>Student Id</FormLabel>
                                 <Input type="text" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors
-                                      .team_member_2_student_id?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1056,12 +938,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-5/12 lg:flex-1">
                                 <FormLabel>Session</FormLabel>
                                 <Input type="tel" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_2_session
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormDescription>
                                   Semester, class
                                 </FormDescription>
@@ -1095,14 +971,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1">
                                 <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_3_name
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1136,12 +1004,6 @@ const TeamForm = () => {
                                     </SelectGroup>
                                   </SelectContent>
                                 </Select>
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_3_tshirt
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1156,14 +1018,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_3_email
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1176,14 +1030,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_3_phone
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1198,14 +1044,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-full lg:w-1/3">
                                 <FormLabel>Institution</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors
-                                        .team_member_3_institution?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1218,12 +1056,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-6/12 lg:flex-1">
                                 <FormLabel>Student Id</FormLabel>
                                 <Input type="text" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors
-                                      .team_member_3_student_id?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1235,12 +1067,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-5/12 lg:flex-1">
                                 <FormLabel>Session</FormLabel>
                                 <Input type="tel" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_3_session
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormDescription>
                                   Semester, class
                                 </FormDescription>
@@ -1274,14 +1100,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1">
                                 <FormLabel>Member Name</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_4_name
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1315,12 +1133,6 @@ const TeamForm = () => {
                                     </SelectGroup>
                                   </SelectContent>
                                 </Select>
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_4_tshirt
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1335,14 +1147,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Email</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_4_email
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1355,14 +1159,6 @@ const TeamForm = () => {
                               <FormItem className="flex-1 mt-5">
                                 <FormLabel>Member Phone</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors.team_member_4_phone
-                                        ?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1377,14 +1173,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-full lg:w-1/3">
                                 <FormLabel>Institution</FormLabel>
                                 <Input {...field} />
-                                <FormDescription>
-                                  <FormDescription>
-                                    {
-                                      form.formState.errors
-                                        .team_member_4_institution?.message
-                                    }
-                                  </FormDescription>{" "}
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1397,12 +1185,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-6/12 lg:flex-1">
                                 <FormLabel>Student Id</FormLabel>
                                 <Input type="text" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors
-                                      .team_member_4_student_id?.message
-                                  }
-                                </FormDescription>
                                 <FormMessage />
                               </FormItem>
                             )}
@@ -1414,12 +1196,6 @@ const TeamForm = () => {
                               <FormItem className="mt-5 w-5/12 lgflex-1">
                                 <FormLabel>Session</FormLabel>
                                 <Input type="tel" {...field} />
-                                <FormDescription>
-                                  {
-                                    form.formState.errors.team_member_4_session
-                                      ?.message
-                                  }
-                                </FormDescription>
                                 <FormDescription>
                                   Semester, class
                                 </FormDescription>
@@ -1552,10 +1328,21 @@ const TeamForm = () => {
                     <FormItem className="w-full lg:w-1/2">
                       <FormLabel>Transaction Id</FormLabel>
                       <Input type="text" {...field} />
-                      <FormDescription>
-                        {form.formState.errors.transaction_id?.message}
-                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
+                <FormField
+                  control={form.control}
+                  name="referral_code"
+                  render={({ field }) => (
+                    <FormItem className="w-full lg:w-1/2">
+                      <FormLabel>Referral Code</FormLabel>
+                      <Input type="text" {...field} />
+                      <FormDescription>
+                        Referral code if you have any.
+                      </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
