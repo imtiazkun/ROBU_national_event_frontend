@@ -536,7 +536,7 @@ const TeamForm = () => {
                     <FormItem className="flex-1">
                       <FormLabel>Applicant Name</FormLabel>
                       <Input {...field} />
-              
+
                       <FormMessage />
                     </FormItem>
                   )}
@@ -1349,6 +1349,27 @@ const TeamForm = () => {
                 />
               </div>
             </>
+          )}
+
+          {form.watch("segment") == "Innovator's Exhibit" && (
+            <Card className="mt-5 bg-red-700 text-white">
+              <CardHeader>
+                <CardTitle>For Innovator&apos;s Exibit Only</CardTitle>
+                <CardDescription className="text-white opacity-70">Project Proposal Submission</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p>Submit details about your project through this form</p>
+                <Button type="button" variant={"secondary"}>
+                  <a
+                    href={"https://forms.gle/2sJLrv8KPr2kHZxz9"}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Go to Form
+                  </a>
+                </Button>
+              </CardContent>
+            </Card>
           )}
 
           <FormItem className="mt-10">
