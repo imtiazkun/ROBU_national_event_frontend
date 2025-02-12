@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Clock: React.FC = () => {
   const calculateTimeLeft = () => {
-    const targetDate = new Date("February 13, 2025");
+    const targetDate = new Date("February 14, 2025");
     const now = new Date();
     const difference = targetDate.getTime() - now.getTime();
 
